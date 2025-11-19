@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ứng dụng A.I | A.I EXPLORE</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Arial,sans-serif; }
+    body {
+      background: linear-gradient(135deg, #e0f2ff 0%, #b3e0ff 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    /* Header - giống hệt 2 trang trước */
+    header {
+      padding: 20px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      background: linear-gradient(90deg, #00c2ff, #0099ff);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+    nav ul { list-style: none; display: flex; gap: 40px; }
+    nav a {
+      text-decoration: none; color: #333; font-weight: 500; position: relative;
+    }
+    nav a::after {
+      content:''; position:absolute; width:0; height:3px; background:#0099ff;
+      bottom:-8px; left:50%; transform:translateX(-50%); transition:width .3s;
+    }
+    nav a:hover::after, nav a.active::after { width:100%; }
+    nav a.active { color:#0099ff; font-weight:700; }
+
+    /* Applications Section */
+    .applications {
+      max-width: 1400px;
+      margin: 60px auto;
+      padding: 0 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.85);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 50px rgba(0,100,255,0.2);
+    }
+
+    .card-icon {
+      flex-shrink: 0;
+      width: 100px;
+      height: 100px;
+      background: white;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .card-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .card-content h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    .card-content p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .grid { grid-template-columns: 1fr; }
+      .card { padding: 25px; }
+    }
+    @media (max-width: 480px) {
+      header { flex-direction: column; gap: 20px; text-align: center; }
+      nav ul { gap: 20px; flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">A.I EXPLORE</div>
+    <nav>
+      <ul>
+        <li><a href="home.html">TRANG CHỦ</a></li>
+        <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+        <li><a href="ungdung.html">ỨNG DỤNG</a></li>
+        <li><a href="congcu.html">CÔNG CỤ</a></li>
+        <li><a href="tintuc.html">TIN TỨC/BLOG</a></li>
+        <li><a href="phanhoi.html">FEEDBACK/PHẢN HỒI</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="applications">
+    <div class="grid">
+
+      <!-- Chat GPT -->
+      <div class="card">
+        <div class="card-icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT">
+        </div>
+        <div class="card-content">
+          <h3>Chat GPT</h3>
+          <p>Công cụ hỗ trợ ngôn ngữ mạnh mẽ, giúp tạo nội dung, trả lời câu hỏi, hỗ trợ học tập và công việc.</p>
+        </div>
+      </div>
+
+      <!-- DALL-E / MidJourney -->
+      <div class="card">
+        <div class="card-icon">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBVB5Qarx9_7YB05RFWGoCSpsvMt9AmjAqyQ&s" alt="MidJourney">
+        </div>
+        <div class="card-content">
+          <h3>DALL-E / MidJourney</h3>
+          <p>Ứng dụng tạo hình ảnh bằng AI, phục vụ thiết kế, sáng tạo và truyền thông.</p>
+        </div>
+      </div>
+
+      <!-- Bard / Google A.I -->
+      <div class="card">
+        <div class="card-icon">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_0aAatzPPHidpzd0dTTXYqD5CPYAK_3p4Lg&s" alt="Google Bard">
+        </div>
+        <div class="card-content">
+          <h3>Bard / Google A.I</h3>
+          <p>Trợ lý AI thông minh trong tra cứu, phân tích và xử lý thông tin.</p>
+        </div>
+      </div>
+
+      <!-- AI trong Giáo dục -->
+      <div class="card">
+        <div class="card-icon">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=200&q=80" alt="AI Education">
+        </div>
+        <div class="card-content">
+          <h3>A.I trong giáo dục</h3>
+          <p>AI cá nhân hóa bài học, hỗ trợ giải bài, gợi ý nội dung phù hợp trình độ và giúp giáo viên quản lý.</p>
+        </div>
+      </div>
+
+      <!-- AI trong Giải trí -->
+      <div class="card">
+        <div class="card-icon">
+          <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=200&q=80" alt="AI Entertainment">
+        </div>
+        <div class="card-content">
+          <h3>A.I trong giải trí</h3>
+          <p>AI tạo ra âm nhạc, hình ảnh, video và nhân vật ảo; giúp sản xuất nội dung nhanh hơn.</p>
+        </div>
+      </div>
+
+      <!-- AI trong Kinh doanh -->
+      <div class="card">
+        <div class="card-icon">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&q=80" alt="AI Business">
+        </div>
+        <div class="card-content">
+          <h3>A.I trong kinh doanh</h3>
+          <p>AI phân tích dữ liệu khách hàng, dự báo thị trường, tự động hóa marketing và nâng cao trải nghiệm.</p>
+        </div>
+      </div>
+
+      <!-- AI trong Y tế -->
+      <div class="card">
+        <div class="card-icon">
+          <img src="https://images.unsplash.com/photo-1576086213369-98f1d5a9d4fb?w=200&q=80" alt="AI Healthcare">
+        </div>
+        <div class="card-content">
+          <h3>A.I trong y tế</h3>
+          <p>AI hỗ trợ chẩn đoán bệnh nhanh và chính xác, phân tích hình ảnh y khoa.</p>
+        </div>
+      </div>
+
+      <!-- AI trong Công nghiệp -->
+      <div class="card">
+        <div class="card-icon">
+          <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf9dc?w=200&q=80" alt="AI Industry">
+        </div>
+        <div class="card-content">
+          <h3>A.I trong công nghiệp</h3>
+          <p>AI tự động hóa dây chuyền sản xuất, kiểm tra chất lượng, dự đoán hỏng hóc máy móc và nâng cao hiệu suất vận hành.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // Hiệu ứng hover nhẹ cho từng card
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.background = 'rgba(255,255,255,0.95)';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.background = 'rgba(255,255,255,0.85)';
+      });
+    });
+  </script>
+</body>
+</html>

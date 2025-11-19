@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tin tức & Blog | A.I EXPLORE</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Arial,sans-serif; }
+    body {
+      background: linear-gradient(135deg, #e0f2ff 0%, #b3e0ff 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    /* Header - đồng bộ 100% các trang trước */
+    header {
+      padding: 20px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      background: linear-gradient(90deg, #00c2ff, #0099ff);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+    nav ul { list-style:none; display:flex; gap:40px; }
+    nav a {
+      text-decoration:none; color:#333; font-weight:500; position:relative;
+    }
+    nav a::after {
+      content:''; position:absolute; width:0; height:3px; background:#0099ff;
+      bottom:-8px; left:50%; transform:translateX(-50%); transition:width .3s;
+    }
+    nav a:hover::after, nav a.active::after { width:100%; }
+    nav a.active { color:#0099ff; font-weight:700; }
+
+    /* Blog Section */
+    .blog {
+      max-width: 1400px;
+      margin: 60px auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .blog-text h1 {
+      font-size: 5rem;
+      font-weight: 900;
+      color: #222;
+      line-height: 1.1;
+      margin-bottom: 25px;
+    }
+
+    .blog-text p {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 50px;
+    }
+
+    .post {
+      display: flex;
+      gap: 25px;
+      margin-bottom: 40px;
+      align-items: flex-start;
+    }
+
+    .post-number {
+      font-size: 4.5rem;
+      font-weight: 900;
+      color: rgba(0,153,255,0.15);
+      flex-shrink: 0;
+    }
+
+    .post-content h3 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .post-content p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #00c2ff, #0099ff);
+      color: white;
+      padding: 16px 36px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 8px 25px rgba(0,153,255,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0,153,255,0.4);
+    }
+
+    .btn-arrow {
+      width: 60px;
+      height: 60px;
+      background: #fff;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      color: #0099ff;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-arrow:hover {
+      background: #0099ff;
+      color: white;
+      transform: translateX(10px);
+    }
+
+    .blog-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .blog-images img {
+      width: 100%;
+      height: 600px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      transition: transform 0.4s;
+    }
+
+    .blog-images img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .blog { grid-template-columns: 1fr; text-align:center; }
+      .blog-text h1 { font-size: 3.8rem; }
+      .btn-group { justify-content:center; }
+      .post-number { font-size: 3.5rem; }
+    }
+
+    @media (max-width: 600px) {
+      .blog-text h1 { font-size: 3rem; }
+      .post { flex-direction: column; text-align: left; }
+      .post-number { font-size: 4rem; }
+      .blog-images { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">A.I EXPLORE</div>
+    <nav>
+      <ul>
+        <li><a href="home.html">TRANG CHỦ</a></li>
+        <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+        <li><a href="ungdung.html">ỨNG DỤNG</a></li>
+        <li><a href="congcu.html">CÔNG CỤ</a></li>
+        <li><a href="tintuc.html">TIN TỨC/BLOG</a></li>
+        <li><a href="phanhoi.html">FEEDBACK/PHẢN HỒI</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="blog">
+    <div class="blog-text">
+      <h1>Tin tức & Blog</h1>
+      <p>
+        Chúng tôi cập nhật xu hướng mới, công nghệ nổi bật và các ứng dụng AI đang được thế giới quan tâm. 
+        Đây là nơi bạn có thể hiểu rõ AI đang phát triển mỗi ngày như thế nào.
+      </p>
+
+      <div class="post">
+        <div class="post-number">01</div>
+        <div class="post-content">
+          <h3>Ra mắt hệ sinh thái AI Camera</h3>
+          <p>Nền tảng với hơn 1.000 thuật toán AI sẽ giúp doanh nghiệp rút ngắn thời gian triển khai, giảm chi phí</p>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-number">02</div>
+        <div class="post-content">
+          <h3>Thử nghiệm trên động vật bằng AI</h3>
+          <p>Thay cho thử nghiệm trên động vật, Anh sẽ đẩy mạnh sử dụng mô hình cơ quan nhân tạo, phân tích bằng AI</p>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn-primary">THÔNG TIN CHI TIẾT</button>
+        <div class="btn-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="blog-images">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT48y6y9U02g_nxZu3FYBe3xcio80OKczv5AA&s" alt="AI Lab">
+      <img src="https://premedia.vneconomy.vn/files/uploads/2025/11/12/b178613da06b421d88fd751f2d27b7b4-49139.jpg?w=900" alt="AI Conference">
+    </div>
+  </section>
+
+  <script>
+    // Hiệu ứng nút
+    document.querySelector('.btn-primary').addEventListener('click', function() {
+      this.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        this.style.transform = '';
+        alert('Đang chuyển đến trang tin tức chi tiết... (sắp có nhé!) 🚀');
+      }, 200);
+    });
+
+    document.querySelector('.btn-arrow').addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
